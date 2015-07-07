@@ -7,6 +7,7 @@ from .models import Group, App
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    lookup_field = 'slug'
 
 
 class AppViewSet(viewsets.ModelViewSet):

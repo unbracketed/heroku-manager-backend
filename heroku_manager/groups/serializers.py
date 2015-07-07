@@ -10,3 +10,6 @@ class AppSerializer(serializers.HyperlinkedModelSerializer):
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
+        extra_kwargs = {
+            'url': {'lookup_field': 'slug'}
+        }
