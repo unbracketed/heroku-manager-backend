@@ -8,6 +8,7 @@ class AppSerializer(serializers.HyperlinkedModelSerializer):
         model = App
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    apps = AppSerializer(many=True, read_only=True)
     class Meta:
         model = Group
         extra_kwargs = {
